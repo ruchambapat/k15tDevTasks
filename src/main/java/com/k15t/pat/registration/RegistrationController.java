@@ -23,7 +23,7 @@ public class RegistrationController {
         VelocityContext context = new VelocityContext();
         StringWriter writer = new StringWriter();
         template.merge(context, writer);
-
+        System.out.println("trial");
         return writer.toString();
     }
 }
