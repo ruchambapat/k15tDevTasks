@@ -23,7 +23,7 @@ h1 span {
 form {
     width: 600px;
     padding: 20px;
-    padding-top: 38px;
+    margin: 20px 0 0 70px;
 }
 
 .header {
@@ -34,4 +34,12 @@ form {
     min-height: 150px;
     background-color: #4af;
     display: flex;
+}
+
+.registeredInfo{
+	margin: 20px 0 0 70px;
+    color: #3a474e;
+    width: auto;
+    padding: 20px;
+    text-align: center;
 }

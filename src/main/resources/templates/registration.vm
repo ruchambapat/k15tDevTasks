@@ -12,15 +12,36 @@
                 <span>Java Meetup Registration</span>
             </h1>
         </div>
-        <form>
-            Extend the form and bind the "Submit" button to store the entered information using the REST resource RegistrationResource.
-            The form should support to enter the following information:<br>
-            - Name (required)<br>
-            - Password (required)<br>
-            - Address (required)<br>
-            - Email (required)<br>
-            - Phone number
-            <p><input class="btn btn-default" type="submit" value="Submit"></p>
+            <form action="#" th:action="@{/registration.html}" th:object="${registration}" method="post">
+            <div class="form-group">
+              <label for="firstname">First Name</label>
+              <input class="form-control" type="text" name="firstname" pattern='[A-Za-z\\s]*' title="characters only">
+            </div>
+            <div class="form-group">
+              <label for="lastname">Last Name</label>
+              <input class="form-control" type="text" name="lastname" pattern='[A-Za-z\\s]*' title="characters only" required>
+            </div>
+            <div class="form-group">
+              <label for="address1">Address 1</label>
+              <input class="form-control" type="text" name="address1" placeholder="houseNumber street, postcode"  pattern="\d+ ([^,]+), (\d{0,5})([A-Z]{0,2})" title="Enter in format: houseNumber street postcode" required>
+            </div>
+            <div class="form-group">
+            <label for="address2">Address 2</label>
+            <input class="form-control" type="text" name="address2" placeholder="city, country" pattern="^[a-zA-Z][^,]+(?:,[^,]+){1}" title="Enter in format: city, country" required>
+            </div>
+            <div class="form-group">
+              <label for="email">E-mail</label>
+              <input class="form-control" type="text" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input class="form-control" type='tel' name="phone" pattern='[0-9\\s]*' title="digits only">
+            </div>
+            <div class="form-group">
+              <label for="pass">Password</label>
+              <input class="form-control" value="" type="password" name="password" required>
+            </div>
+            <button id="submit2" type="submit" class="btn btn-primary" value="Submit">Submit</button>
         </form>
         #parse ("common/footer.vm")
     </body>
